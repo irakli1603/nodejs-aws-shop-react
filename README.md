@@ -18,3 +18,6 @@ The following scripts are available from the root of the project:
     Destroys the deployed CDK stack from the cdk workspace, removing all associated AWS resources.
 
 
+You can viewed deployed application on:
+[CloudFront](https://d2ly6gy8gd36lr.cloudfront.net) opens a static website
+[S3 Bucket](https://cdkstack-websitebucket75c24d94-3fvnbrvtbsyd.s3.eu-central-1.amazonaws.com/index.html) shows 403 Access Denied error
