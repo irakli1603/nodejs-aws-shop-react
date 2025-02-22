@@ -1,38 +1,23 @@
-# React-shop-cloudfront
+## Automatic deployment with CDK
 
-This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
+This is a assignment done for [AWS_2_serving_spa](https://github.com/rolling-scopes-school/aws/blob/main/aws-developer/02_serving_spa/task.md) 
 
-- [Vite](https://vitejs.dev/) as a project bundler
-- [React](https://beta.reactjs.org/) as a frontend framework
-- [React-router-dom](https://reactrouterdotcom.fly.dev/) as a routing library
-- [MUI](https://mui.com/) as a UI framework
-- [React-query](https://react-query-v3.tanstack.com/) as a data fetching library
-- [Formik](https://formik.org/) as a form library
-- [Yup](https://github.com/jquense/yup) as a validation schema
-- [Vitest](https://vitest.dev/) as a test runner
-- [MSW](https://mswjs.io/) as an API mocking library
-- [Eslint](https://eslint.org/) as a code linting tool
-- [Prettier](https://prettier.io/) as a code formatting tool
-- [TypeScript](https://www.typescriptlang.org/) as a type checking tool
 
-## Available Scripts
+This workspace uses npm workspaces to manage multiple packages. App contains 'my shop' application and cdk contains the infrastructure.
 
-### `start`
 
-Starts the project in dev mode with mocked API on local environment.
+The following scripts are available from the root of the project:
 
-### `build`
+- `npm run build:app`
+    Builds the frontend application located in the my-store-app workspace. This command compiles the React app, preparing it for deployment.
 
-Builds the project for production in `dist` folder.
+- `npm run deploy`
+    Deploys the CDK stack defined in the cdk workspace. This command synthesizes the CloudFormation template and deploys the AWS resources to your account.
 
-### `preview`
+- `npm run destroy`
+    Destroys the deployed CDK stack from the cdk workspace, removing all associated AWS resources.
 
-Starts the project in production mode on local environment.
 
-### `test`, `test:ui`, `test:coverage`
-
-Runs tests in console, in browser or with coverage.
-
-### `lint`, `prettier`
-
-Runs linting and formatting for all files in `src` folder.
+You can view deployed application on:
+- [CloudFront](https://d2ly6gy8gd36lr.cloudfront.net) opens a static website
+- [S3 Bucket](https://cdkstack-websitebucket75c24d94-3fvnbrvtbsyd.s3.eu-central-1.amazonaws.com/index.html) shows 403 Access Denied error
